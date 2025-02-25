@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: url('https://source.unsplash.com/1600x900/?technology,abstract') no-repeat center center/cover;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="glass p-8 rounded-xl shadow-lg w-96 text-white transition-all duration-300">
+        <h2 class="text-3xl font-bold text-center mb-6">Welcome Back</h2>
+
+        <form action="/login" method="POST" class="space-y-5">
+            <div class="relative">
+                <input type="email" name="email" required 
+                    class="w-full p-3 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-4 focus:ring-blue-500 placeholder-gray-400 transition-all duration-200">
+                <label class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">Email</label>
+            </div>
+
+            <div class="relative">
+                <input type="password" name="password" required
+                    class="w-full p-3 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-4 focus:ring-blue-500 placeholder-gray-400 transition-all duration-200">
+                <label class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">Password</label>
+            </div>
+
+            <button type="submit" 
+                class="w-full bg-blue-600 py-3 rounded-lg hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                Login
+            </button>
+
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-sm text-gray-300 hover:underline">Forgot Password?</a>
+                <a href="/register" class="text-sm text-blue-300 hover:underline">Create Account</a>
+            </div>
+
+            <div class="flex gap-4 mt-4">
+                <button class="flex-1 bg-white text-black py-2 rounded-lg flex items-center justify-center gap-2 shadow-md hover:bg-gray-200">
+                    <img src="https://img.icons8.com/color/24/google-logo.png"/> Google
+                </button>
+                <button class="flex-1 bg-blue-500 text-white py-2 rounded-lg flex items-center justify-center gap-2 shadow-md hover:bg-blue-600">
+                    <img src="https://img.icons8.com/color/24/facebook-new.png"/> Facebook
+                </button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

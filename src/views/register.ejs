@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: url('https://source.unsplash.com/1600x900/?business,technology') no-repeat center center/cover;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="glass p-8 rounded-xl shadow-lg w-96 text-white transition-all duration-300">
+        <h2 class="text-3xl font-bold text-center mb-6">Create an Account</h2>
+
+        <form action="/register" method="POST" class="space-y-5">
+            <div class="relative">
+                <input type="text" name="username" required 
+                    class="w-full p-3 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-4 focus:ring-green-500 placeholder-gray-400 transition-all duration-200">
+                <label class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">Username</label>
+            </div>
+
+            <div class="relative">
+                <input type="email" name="email" required 
+                    class="w-full p-3 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-4 focus:ring-green-500 placeholder-gray-400 transition-all duration-200">
+                <label class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">Email</label>
+            </div>
+
+            <div class="relative">
+                <input type="password" name="password" required
+                    class="w-full p-3 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-4 focus:ring-green-500 placeholder-gray-400 transition-all duration-200">
+                <label class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">Password</label>
+            </div>
+
+            <button type="submit" 
+                class="w-full bg-green-600 py-3 rounded-lg hover:bg-green-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                Register
+            </button>
+
+            <div class="text-center">
+                <p class="text-sm">Already have an account? 
+                    <a href="/login" class="text-blue-300 hover:underline">Login</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
