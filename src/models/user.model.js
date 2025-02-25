@@ -66,6 +66,6 @@ userSchema.statics.verifyToken = function (token) {
     return jwt.verify(token, config.JWT_SECRET);
 };
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("user", userSchema);
 
 export default User;
